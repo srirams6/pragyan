@@ -557,7 +557,7 @@ $settingsForm .= <<<SETTINGSFORM
 	toggleLdap(true);
 	toggleAds(true);
 </script>
-<input type="submit" name="btnSubmitSettings" onclick="return checkForm();" value="Continue" />
+<input class="pure-button" type="submit" name="btnSubmitSettings" onclick="return checkForm();" value="Continue" />
 </form>
 
 SETTINGSFORM;

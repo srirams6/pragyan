@@ -269,7 +269,7 @@ function renameInstallationDirectory() {
 function checkDatabaseAccess() {
 	$dbaccessInfo = '';
 	$dbaccessErrorTip = <<<WHATEVER
-			<p>To create a database and a user with all priviliges to that database, run the following queries after replacing <pre>pragyandatabase</pre>, <pre>localhost</pre>, <pre>pragyanuser</pre> and <pre>pragyanpassword</pre> as required. </p>
+			<p>To create a database and a user with all priviliges to that database, run the following queries after replacing <tt>pragyandatabase</tt>, <tt>localhost</tt>, <tt>pragyanuser</tt> and <tt>pragyanpassword</tt> as required. </p>
 			<pre>CREATE DATABASE `pragyandatabase`;
 CREATE USER 'pragyanuser'@'localhost' IDENTIFIED BY 'pragyanpassword';
 GRANT ALL PRIVILEGES ON `pragyandatabase` . * TO 'pragyanuser'@'localhost';</pre>
@@ -465,7 +465,7 @@ function CheckPrerequisites() {
 	global $scriptPath;
 	
 	$cmsfolder = "$scriptPath/$sourceFolder";
-	
+	$prereq="";
 	$checklist=array( 
 			"$cmsfolder" => "folder", 
 			"$cmsfolder/uploads" => "folder",

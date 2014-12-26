@@ -1,3 +1,6 @@
+html{
+	background-color: #D6DBE8;
+}
 #header, #tabs, #footer{
     background-color:   #7887AB;
     color:  #fff;
@@ -22,4 +25,11 @@ input, select{
 }
 input:focus{
 	border-color: #2E4172 !important;
+}
+#footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
 }
