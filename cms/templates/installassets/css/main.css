@@ -1,0 +1,19 @@
+#header, #tabs, #footer{
+    background-color:   #7887AB;
+    color:  #fff;
+}
+#main{
+    background-color: #D6DBE8;
+}
+#tabhead{
+    color:  #fff;
+}
+#tabs > ul > li > a{
+    color:  #D6DBE8;
+}
+#seltab > a{
+    color:  #2E4172 !important;
+}
+a:link{
+    color:  #2E4172;
+}

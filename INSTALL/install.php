@@ -17,7 +17,7 @@ $installFolder = '.';
 $URL_REWRITE = 'false';
 $userConfigs=array();
 $cmsFolder = "../$sourceFolder";
-$templateFolder = "$cmsFolder/templates/crystalx";
+$templateFolder = "$cmsFolder/templates/installassets";
 $scriptPathWithFolder = substr($_SERVER['SCRIPT_FILENAME'], 0, strrpos($_SERVER['SCRIPT_FILENAME'], '/'));
 $scriptPath = substr($scriptPathWithFolder , 0, strrpos($scriptPathWithFolder , '/'));
 /// Will be changed by renameInstallationDirectory() function
@@ -269,7 +269,7 @@ function renameInstallationDirectory() {
 function checkDatabaseAccess() {
 	$dbaccessInfo = '';
 	$dbaccessErrorTip = <<<WHATEVER
-			<p>To create a database and a user with all priviliges to that database, run the following queries after replacing <b>pragyandatabase</b>, <b>localhost</b>, <b>pragyanuser</b> and <b>pragyanpassword</b> as required. </p>
+			<p>To create a database and a user with all priviliges to that database, run the following queries after replacing <pre>pragyandatabase</pre>, <pre>localhost</pre>, <pre>pragyanuser</pre> and <pre>pragyanpassword</pre> as required. </p>
 			<pre>CREATE DATABASE `pragyandatabase`;
 CREATE USER 'pragyanuser'@'localhost' IDENTIFIED BY 'pragyanpassword';
 GRANT ALL PRIVILEGES ON `pragyandatabase` . * TO 'pragyanuser'@'localhost';</pre>
@@ -482,15 +482,15 @@ function CheckPrerequisites() {
 	{
 		switch(checkLocationAccess($path))
 		{
-			case 9 : $prereq.="<li><p>Pragyan CMS doesn't have write permissions over the file <b>$path</b>.</p></li>"; break;
-			case 10 : $prereq.="<li><p>Pragyan CMS doesn't have write permissions over the folder <b>$path</b>.</p></li>"; break;
+			case 9 : $prereq.="<li><p>Pragyan CMS doesn't have write permissions over the file: <tt>$path</tt></p></li>"; break;
+			case 10 : $prereq.="<li><p>Pragyan CMS doesn't have write permissions over the folder <tt>$path</tt></p></li>"; break;
 			case 16 : 
 			
 				$trycreate=($type=="file")?(touch($path)&&chmod($path,0755)):mkdir($path);
 				if($trycreate)
 					$checklist2[$path]=$type;
 				else
-					$prereq.="<li><p>The following $type is missing : <b>$path</b> and Pragyan CMS was not able to create it. Please create the $type manually and make sure Pragyan CMS has write permissions over it.</p></li>"; 
+					$prereq.="<li><p>The following $type is missing: <tt>$path</tt>. Pragyan CMS was not able to create it. Please create the $type manually and make sure Pragyan CMS has write permissions over it.</p></li>"; 
 				break;
 		}
 	}
@@ -498,15 +498,15 @@ function CheckPrerequisites() {
 	{
 		switch(checkLocationAccess($path))
 		{
-			case 9 : $prereq.="<li><p>Pragyan CMS doesn't have write permissions over the file <b>$path</b>.</p></li>"; break;
-			case 10 : $prereq.="<li><p>Pragyan CMS doesn't have write permissions over the folder <b>$path</b>.</p></li>"; break;
+			case 9 : $prereq.="<li><p>Pragyan CMS doesn't have write permissions over the file <tt>$path</tt>.</p></li>"; break;
+			case 10 : $prereq.="<li><p>Pragyan CMS doesn't have write permissions over the folder <tt>$path</tt>.</p></li>"; break;
 			case 16 : 
 			
 				$trycreate=($type=="file")?touch($path):mkdir($path);
 				if($trycreate)
 					$checklist2[$path]=$type;
 				else
-					$prereq.="<li><p>The following $type is missing : <b>$path</b> and Pragyan CMS was not able to create it. Please create the $type manually and make sure Pragyan CMS has write permissions over it.</p></li>";
+					$prereq.="<li><p>The following $type is missing : <tt>$path</tt> and Pragyan CMS was not able to create it. Please create the $type manually and make sure Pragyan CMS has write permissions over it.</p></li>";
 				break;
 		}
 	}
@@ -518,7 +518,7 @@ function CheckPrerequisites() {
 	{
 	    $prereq.="<li><p>.htaccess not enabled </p></li>";
 	    $prereq .= <<<HTTPMSG
-	    For Pragyan CMS to work, .htaccess needs to be supported your webserver. For this, the <b>AllowOverride</b> setting in the httpd.conf needs to be modified.<br/>
+	    For Pragyan CMS to work, .htaccess needs to be supported your webserver. For this, the <pre>AllowOverride</pre> setting in the httpd.conf needs to be modified.<br/>
 			The default location of httpd.conf is <mono>/etc/httpd/conf/httpd.conf</mono>, but may be different for you according to your webserver's installation.
 			<br /><br />
 			Add the following lines in the httpd.conf of your webserver :
@@ -539,15 +539,15 @@ PHPGD;
 	}
 	
 	if ($prereq != '') {
-		$prereq = "<p>The following prerequisite(s) need to be resolved before Pragyan CMS can continue installation.</p>\n<ul>\n$prereq\n</ul>";
+		$prereq = "<p>The following prerequisite(s) need to be resolved before proceeding with installation.</p>\n<ul>\n$prereq\n</ul>";
 		$prereq .= '<p>Please make the necessary changes, and <a href="javascript: location.reload(true)">click here</a> to refresh this page.</p>';
 		$prereq .= <<<MSG
 <hr/>
-	<p>Pragyan CMS should have full write-access to its root installation directory. In your case it is : <b>$scriptPath</b>.<br/>
+	<p>Pragyan CMS should have full write-access to its root installation directory (<tt>$scriptPath</tt>).<br/>
 	Please make sure the installation directory is writable by your webserver user. On a <i>linux</i> server, run the following commands as root:
 	<pre>chown -R &lt;httpd-process-user&gt; $scriptPath</pre>
-where &lt;httpd-process-user&gt; is the default user for your webserver process. In most cases, it is either 'www-data' or 'apache'.
-	<br/><br/>OR if you don't know your webserver process user and you're also not so concerned about security, execute the following command as root :
+where <tt>&lt;httpd-process-user&gt</tt> is the default user for your webserver process. In most cases, it is either <tt>www-data</tt> or <tt>apache</tt>.
+	<br/><br/>If you don't know your webserver process user and you're also not so concerned about security, execute the following command as root :
 	<br /><pre>chmod -R 777 $scriptPath</pre></p>
 MSG;
 	}
