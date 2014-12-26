@@ -348,84 +348,77 @@ $settingsForm = <<<SETTINGSFORM1
 	 	<img src="images/insterror.png">
 	 	<img src="images/instsuccess.png">
 	 </div>
-<form name="SettingsForm" method="POST" action="">
+<form name="SettingsForm" class="pure-form pure-form-aligned" method="POST" action="">
 
 
 
 <fieldset name="DatabaseSettings">
 	<legend>Database Settings</legend>
-	<table border="0" width="580px">
-		<tr>
-			<td width="210px"><label for="txtMySQLServerHost">MySQL Server Host:</label></td>
-			<td><input type="text" name="txtMySQLServerHost" id="txtMySQLServerHost" value="localhost" onblur="validate_domain(this,0)" /></td>
-		</tr>
-		<tr>
-			<td width="210px"><label for="txtMySQLServerPort">MySQL Server Port:<br/>(Leave blank if not sure) </label></td>
-			<td><input type="text" name="txtMySQLServerPort" id="txtMySQLServerPort" value="" onblur="validate_port(this,0)" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtMySQLUsername">Username:</label></td>
-			<td><input type="text" name="txtMySQLUsername" id="txtMySQLUsername" value="" autocomplete="off" onblur="validate_username(this,0)" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtMySQLPassword">Password:</label></td>
-			<td><input type="password" name="txtMySQLPassword" id="txtMySQLPassword" autocomplete="off" value="" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtMySQLDatabase">Database:</label></td>
-			<td><input type="text" name="txtMySQLDatabase" id="txtMySQLDatabase" autocomplete="off" value="" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtMySQLTablePrefix">Table Prefix:</label></td>
-			<td><input type="text" name="txtMySQLTablePrefix" id="txtMySQLTablePrefix" value="pragyanV3_" /></td>
-		</tr>
-	</table>
+			<div class="pure-control-group">
+			<label for="txtMySQLServerHost">MySQL Server Host:</label>
+			<input type="text" name="txtMySQLServerHost" id="txtMySQLServerHost" value="localhost" onblur="validate_domain(this,0)" />
+			</div>
+			<div class="pure-control-group">
+			<label for="txtMySQLServerPort">MySQL Server Port:<br/>(Leave blank if not sure) </label>
+			<input type="text" name="txtMySQLServerPort" id="txtMySQLServerPort" value="" onblur="validate_port(this,0)" />
+			</div>
+			<div class="pure-control-group">
+			<label for="txtMySQLUsername">Username:</label>
+			<input type="text" name="txtMySQLUsername" id="txtMySQLUsername" value="" autocomplete="off" onblur="validate_username(this,0)" />
+			</div>
+			<div class="pure-control-group">
+			<label for="txtMySQLPassword">Password:</label>
+			<input type="password" name="txtMySQLPassword" id="txtMySQLPassword" autocomplete="off" value="" />
+			</div>
+			<div class="pure-control-group">
+			<label for="txtMySQLDatabase">Database:</label>
+			<input type="text" name="txtMySQLDatabase" id="txtMySQLDatabase" autocomplete="off" value="" />
+			</div>
+			<div class="pure-control-group">
+			<label for="txtMySQLTablePrefix">Table Prefix:</label>
+			<input type="text" name="txtMySQLTablePrefix" id="txtMySQLTablePrefix" value="pragyanV3_" />
+</div>
 </fieldset>
 
 <fieldset name="AdminUser">
 	<legend>Administrator Details</legend>
-	<table border="0" width="580px">
-		<tr>
-			<td width="210px"><label for="txtAdminUsername">Administrator Username:</label></td>
-			<td><input type="text" name="txtAdminUsername" id="txtAdminUsername" value="admin" onblur="validate_username(this,0)" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtAdminEmail">Administrator Email:</label></td>
-			<td><input type="text" name="txtAdminEmail" id="txtAdminEmail" value="admin@localhost.com" autocomplete="off" onblur="validate_email(this,0)" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtAdminFullname">Administrator Full Name:</label></td>
-			<td><input type="text" name="txtAdminFullname" id="txtAdminFullname" value="" autocomplete="off" onblur="validate_name(this,0)" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtAdminPassword">Administrator Password:</label></td>
-			<td><input type="password" name="txtAdminPassword" id="txtAdminPassword" autocomplete="off" value="" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtAdminPassword2">Administrator Password (Verify):</label></td>
-			<td><input type="password" name="txtAdminPassword2" id="txtAdminPassword2" autocomplete="off" value="" /></td>
-		</tr>
-	</table>
+			<div class="pure-control-group">
+			<label for="txtAdminUsername">Administrator Username:</label>
+			<input type="text" name="txtAdminUsername" id="txtAdminUsername" value="admin" onblur="validate_username(this,0)" />
+			</div>
+			<div class="pure-control-group">
+			<label for="txtAdminEmail">Administrator Email:</label>
+			<input type="text" name="txtAdminEmail" id="txtAdminEmail" value="admin@localhost.com" autocomplete="off" onblur="validate_email(this,0)" />
+			</div>
+			<div class="pure-control-group">
+			<label for="txtAdminFullname">Administrator Full Name:</label>
+			<input type="text" name="txtAdminFullname" id="txtAdminFullname" value="" autocomplete="off" onblur="validate_name(this,0)" />
+			</div>
+			<div class="pure-control-group">
+			<label for="txtAdminPassword">Administrator Password:</label>
+			<input type="password" name="txtAdminPassword" id="txtAdminPassword" autocomplete="off" value="" />
+			</div>
+			<div class="pure-control-group">
+			<label for="txtAdminPassword2">Administrator Password (Verify):</label>
+			<input type="password" name="txtAdminPassword2" id="txtAdminPassword2" autocomplete="off" value="" />
+			</div>
 </fieldset>
 
 <fieldset name="CMSSettings">
 	<legend>CMS Settings</legend>
 
-	<table border="0" width="580px">
-		<tr>
-			<td width="210px"><label for="txtCMSTitle">Website Title:</label></td>
-			<td><input type="text" name="txtCMSTitle" id="txtCMSTitle" value="Pragyan CMS" /></td>
-		</tr>
-		<tr>
-			<td><label for="selTemplate">Template:</label></td>
-			<td>
+			<div class="pure-control-group">
+			<label for="txtCMSTitle">Website Title:</label>
+			<input type="text" name="txtCMSTitle" id="txtCMSTitle" value="Pragyan CMS" />
+			<div>
+			<div class="pure-control-group">
+			<label for="selTemplate">Template:</label>
 				<select name="selTemplate" id="selTemplate">
 					<option selected="selected" value="integriti">Integriti</option>
 					<option value="crystalx">Crystal X</option>
 					<option value="blacksilver">Black Silver</option>
 				</select>
-			</td>
-		</tr>
+			</div>			
 SETTINGSFORM1;
 
 //Todo: Check if .htaccess is enabled in the webserver if enabled than check for rewrite_module else disable rewrite_module permenantly or ask user to enable .htaccess
@@ -450,43 +443,38 @@ if($mod_rewrite)
 }
 
 $settingsForm .= <<<SETTINGSFORM
-		<tr>
-			<td><label for="optURLRewrite">Enable Pretty URLs (requires .htaccess and rewrite module enabled in webserver):</label></td>
-			<td>
-			<label><input type="radio" name="optURLRewrite" id="optURLRewriteNo" value="No" $valueNoRewrite </label>
-			<label><input type="radio" name="optURLRewrite" id="optURLRewriteYes" value="Yes" $valueRewrite </label>
-			</td>
-		</tr>
-		<tr>
-			<td>Activate user on registration?</td>
-			<td>
-				<label><input type="radio" name="optDefaultUserActive" id="optDefaultUserActiveYes" value="Yes" checked="checked" />Yes</label>
-				<label><input type="radio" name="optDefaultUserActive" id="optDefaultUserActiveNo" value="No" />No</label>
-			</td>
-		</tr>
-		<tr>
-			<td>Send mail on registration?</td>
-			<td>
-				<label><input type="radio" name="optSendVerification" id="optSendVerificationYes" value="Yes" />Yes</label>
-				<label><input type="radio" name="optSendVerification" id="optSendVerificationNo" value="No" checked="checked" />No</label>
-			</td>
-		</tr>
-		<tr>
-			<td><label for="txtCMSMailId">Website Email Id:</label></td>
-			<td><input type="text" name="txtCMSMailId" id="txtCMSMailId" value="no-reply@pragyan.org" onblur="validate_email(this,0)" /></td> 
-		</tr>
-		<tr>
-			<td><label for="txtUploadLimit">Upload Limit (bytes):</label></td>
-			<td><input type="text" name="txtUploadLimit" id="txtUploadLimit" value="50000000" onblur="validate_num(this,0)" /></td>
-		</tr>
-		
-		<tr>
-			<td><label for="txtCookieTimeout">Cookie Timeout (seconds):</label></td>
-			<td><input type="text" name="txtCookieTimeout" id="txtCookieTimeout" value="60 * 30" /></td>
-		</tr>
-		<tr>
-			<td><label for="selErrorReporting">Error Reporting Level:</label></td>
-			<td>
+			<div class="pure-control-group">
+			<label for="optURLRewrite">Enable Pretty URLs (requires .htaccess and rewrite module enabled in webserver):</label>
+			<input type="radio" name="optURLRewrite" id="optURLRewriteNo" value="No" $valueNoRewrite 
+			<input type="radio" name="optURLRewrite" id="optURLRewriteYes" value="Yes" $valueRewrite
+			</div>
+			
+			<div class="pure-control-group">
+			<label for="ptDefaultUserActive">Activate user on registration?</label>
+				<input type="radio" name="optDefaultUserActive" id="optDefaultUserActiveYes" value="Yes" checked="checked" >Yes</input>
+				<input type="radio" name="optDefaultUserActive" id="optDefaultUserActiveNo" value="No">No</input>
+			</div>			
+
+			<div class="pure-control-group">
+			<label for="optSendVerification">Send mail on registration?</label>
+				<input type="radio" name="optSendVerification" id="optSendVerificationYes" value="Yes">Yes</input>
+				<input type="radio" name="optSendVerification" id="optSendVerificationNo" value="No" checked="checked">No</input>
+			</div>
+
+			<div class="pure-control-group">
+			<label for="txtCMSMailId">Website Email Id:</label>
+			<input type="text" name="txtCMSMailId" id="txtCMSMailId" value="no-reply@pragyan.org" onblur="validate_email(this,0)" /> 
+			</div>
+			<div class="pure-control-group">
+			<label for="txtUploadLimit">Upload Limit (bytes):</label>
+			<input type="text" name="txtUploadLimit" id="txtUploadLimit" value="50000000" onblur="validate_num(this,0)" />
+			</div>
+			<div class="pure-control-group">
+			<label for="txtCookieTimeout">Cookie Timeout (seconds):</label>
+			<input type="text" name="txtCookieTimeout" id="txtCookieTimeout" value="60 * 30" />
+			</div>
+			<div class="pure-control-group">
+			<label for="selErrorReporting">Error Reporting Level:</label>
 				<select name="selErrorReporting" id="selErrorReporting">
 					<option value="0" selected="selected">None</option>
 					<option value="1">Errors and Warnings</option>
@@ -494,89 +482,74 @@ $settingsForm .= <<<SETTINGSFORM
 					<option value="3">Everything except Notices</option>
 					<option value="4">Everything</option>
 				</select>
-			</td>
-		</tr>
-	</table>
+			</div>
 </fieldset>
 
 <fieldset name="AuthenticationSettings">
 	<legend>Authentication Settings</legend>
 
-	<table border="0" width="580px">
-		<tr>
-			<td width="210px">Enable IMAP Login:</td>
-			<td>
-				<label><input type="radio" name="optEnableIMAP" id="optEnableIMAPYes" value="Yes" onclick="toggleImap(false)"/>Yes</label>
-				<label><input type="radio" name="optEnableIMAP" id="optEnableIMAPNo" value="No" onclick="toggleImap(true)" checked="checked" />No</label>
-			</td>
-		</tr>
-		<tr>
-			<td><label for="txtIMAPServerAddress">Server Address:</label></td>
-			<td><input type="text" id="txtIMAPServerAddress" name="txtIMAPServerAddress" onblur="validate_domain(this,0)" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtIMAPPort">Port:</label></td>
-			<td><input type="text" id="txtIMAPPort" name="txtIMAPPort" onblur="validate_port(this,0)" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtIMAPUserDoman">User Domain:</label></td>
-			<td><input type="text" id="txtIMAPUserDomain" name="txtIMAPUserDomain" /></td>
-		</tr>
+		<div class="pure-control-group">
+			<label for="optEnableIMAP">Enable IMAP Login:</label>
+			<input type="radio" name="optEnableIMAP" id="optEnableIMAPYes" value="Yes" onclick="toggleImap(false)">Yes</input>
+			<input type="radio" name="optEnableIMAP" id="optEnableIMAPNo" value="No" onclick="toggleImap(true)" checked="checked">No</input>
+		</div>
+		<div class="pure-control-group">
+			<label for="txtIMAPServerAddress">Server Address:</label>
+			<input type="text" id="txtIMAPServerAddress" name="txtIMAPServerAddress" onblur="validate_domain(this,0)" />
+		</div>
+		<div class="pure-control-group">
+			<label for="txtIMAPPort">Port:</label>
+			<input type="text" id="txtIMAPPort" name="txtIMAPPort" onblur="validate_port(this,0)" />
+		</div>
+		<div class="pure-control-group">
+			<label for="txtIMAPUserDoman">User Domain:</label>
+			<input type="text" id="txtIMAPUserDomain" name="txtIMAPUserDomain" />
+		</div>
+		<div class="pure-control-group">
+			<label for="optEnableLDAP">Enable LDAP Login:</label>
+				<input type="radio" name="optEnableLDAP" id="optEnableLDAPYes" value="Yes" onclick="toggleLdap(false)">Yes</input>
+				<input type="radio" name="optEnableLDAP" id="optEnableLDAPNo" value="No" onclick="toggleLdap(true)" checked="checked">No</input>
+		</div>
+		<div class="pure-control-group">
+			<label for="txtLDAPServerAddress">Server Address:</label>
+			<input type="text" id="txtLDAPServerAddress" name="txtLDAPServerAddress" />
+		</div>
+		<div class="pure-control-group">
+			<label for="txtLDAPSearchGroup">Search Group:</label>
+			<input type="text" id="txtLDAPSearchGroup" name="txtLDAPSearchGroup" />
+		</div>
+		<div class="pure-control-group">
+			<label for="txtLDAPUserDomain">User Domain:</label>
+			<input type="text" id="txtLDAPUserDomain" name="txtLDAPUserDomain"  />
+		</div>
 
-		<tr>
-			<td>Enable LDAP Login:</td>
-			<td>
-				<label><input type="radio" name="optEnableLDAP" id="optEnableLDAPYes" value="Yes" onclick="toggleLdap(false)"/>Yes</label>
-				<label><input type="radio" name="optEnableLDAP" id="optEnableLDAPNo" value="No" onclick="toggleLdap(true)" checked="checked" />No</label>
-			</td>
-		</tr>
-		<tr>
-			<td><label for="txtLDAPServerAddress">Server Address:</label></td>
-			<td><input type="text" id="txtLDAPServerAddress" name="txtLDAPServerAddress" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtLDAPSearchGroup">Search Group:</label></td>
-			<td><input type="text" id="txtLDAPSearchGroup" name="txtLDAPSearchGroup" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtLDAPUserDomain">User Domain:</label></td>
-			<td><input type="text" id="txtLDAPUserDomain" name="txtLDAPUserDomain"  /></td>
-		</tr>
-
-		<tr>
-			<td>Enable ADS Login:</td>
-			<td>
-				<label><input type="radio" name="optEnableADS" id="optEnableADSYes" value="Yes" onclick="toggleAds(false)" />Yes</label>
-				<label><input type="radio" name="optEnableADS" id="optEnableADSNo" value="No" onclick="toggleAds(true)" checked="checked" />No</label>
-			</td>
-		</tr>
-		<tr>
-			<td><label for="txtADSServerAddress">Server Address:</label></td>
-			<td><input type="text" id="txtADSServerAddress" name="txtADSServerAddress" onblur="validate_domain(this,0)" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtADSNetworkName">Network Name:</label></td>
-			<td><input type="text" id="txtADSNetworkName" name="txtADSNetworkName" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtADSUserDomain">User Domain:</label></td>
-			<td><input type="text" id="txtADSUserDomain" name="txtADSUserDomain"/></td>
-		</tr>
-	</table>
+		<div class="pure-control-group">
+				<label for="optEnableADS">Enable ADS Login:</label>
+				<input type="radio" name="optEnableADS" id="optEnableADSYes" value="Yes" onclick="toggleAds(false)" >Yes</input>
+				<input type="radio" name="optEnableADS" id="optEnableADSNo" value="No" onclick="toggleAds(true)" checked="checked" >No</input>
+		</div>
+		<div class="pure-control-group">
+			<label for="txtADSServerAddress">Server Address:</label>
+			<input type="text" id="txtADSServerAddress" name="txtADSServerAddress" onblur="validate_domain(this,0)" />
+		</div>
+		<div class="pure-control-group">
+			<label for="txtADSNetworkName">Network Name:</label>
+			<input type="text" id="txtADSNetworkName" name="txtADSNetworkName" />
+		</div>
+		<div class="pure-control-group">
+			<label for="txtADSUserDomain">User Domain:</label>
+			<input type="text" id="txtADSUserDomain" name="txtADSUserDomain"/>
+		</div>
 </fieldset>
 <fieldset name="OpeinIDSettings">
 	<legend>OpenID Settings</legend>
 
-	<table border="0" width="580px">
-	
-		<tr>
-			<td><label for="optEnableOpenID">Enable OpenID?</label></td>
-			<td>
-			<labe><input type="radio" name="optEnableOpenID" id="optEnableOpenIDNo" checked="checked" value="No" />No</label>
-			<label><input type="radio" name="optEnableOpenID" id="optEnableOpenIDYes" value="Yes" />Yes</label>
-			</td>
-		</tr>
-		</table>
+		<div class="pure-control-group">
+
+			<label for="optEnableOpenID">Enable OpenID?</label>
+			<input type="radio" name="optEnableOpenID" id="optEnableOpenIDNo" checked="checked" value="No" >No</input>
+			<input type="radio" name="optEnableOpenID" id="optEnableOpenIDYes" value="Yes" >Yes</input>
+		</div>
 </fieldset>
 
 <script type="text/javascript" language="javascript">
