@@ -17,3 +17,9 @@
 a:link{
     color:  #2E4172;
 }
+input, select{
+	color: #2E4172;
+}
+input:focus{
+	border-color: #2E4172 !important;
+}

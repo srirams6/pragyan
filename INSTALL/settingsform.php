@@ -348,7 +348,7 @@ $settingsForm = <<<SETTINGSFORM1
 	 	<img src="images/insterror.png">
 	 	<img src="images/instsuccess.png">
 	 </div>
-<form name="SettingsForm" class="pure-form pure-form-aligned" method="POST" action="">
+<form name="SettingsForm" id="SettingsForm" class="pure-form pure-form-aligned" method="POST" action="">
 
 
 
@@ -450,7 +450,7 @@ $settingsForm .= <<<SETTINGSFORM
 			</div>
 			
 			<div class="pure-control-group">
-			<label for="ptDefaultUserActive">Activate user on registration?</label>
+			<label for="optDefaultUserActive">Activate user on registration?</label>
 				<input type="radio" name="optDefaultUserActive" id="optDefaultUserActiveYes" value="Yes" checked="checked" >Yes</input>
 				<input type="radio" name="optDefaultUserActive" id="optDefaultUserActiveNo" value="No">No</input>
 			</div>			
