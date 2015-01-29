@@ -316,7 +316,7 @@ INSERT IGNORE INTO `pragyanV3_permissionlist` (`perm_id`,`page_module`, `perm_ac
 (82, 'events', 'csg', 'CSG', 5, 'CSG'),
 (83, 'events', 'qahead', 'QA Head', 6, 'QA Head.'),
 (84, 'events', 'prhead', 'PR Head', 7, 'PR Head'),
-(72, 'events', 'create', 'Create', 0, 'Create');
+(85, 'events', 'create', 'Create', 0, 'Create');
 
 
 --
