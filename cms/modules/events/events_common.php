@@ -495,8 +495,8 @@ function validateNewProcurement($pageModuleComponentId){
                     $postValue=escape($postValue);
             }
             //Query to insert into the db
-            $insertQuery="INSERT INTO `events_procurements` (`procurement_id`, `procurement_name`, `quantity`, `page_moduleComponentId`) "
-                         ."VALUES (NULL, '{$_POST['newProc']}', 0, '{$pageModuleComponentId}')";
+            $insertQuery="INSERT INTO `events_procurements` (`procurement_name`, `page_moduleComponentId`) "
+                         ."VALUES ('{$_POST['newProc']}', '{$pageModuleComponentId}')";
             $insertRes=mysql_query($insertQuery) or displayerror(mysql_error());
             echo "Valid";
     }
